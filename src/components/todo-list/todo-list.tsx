@@ -10,6 +10,10 @@ export class TodoList {
   @Element() element: HTMLElement;
 
   private addNewTask(event: UIEvent): void {
+    console.log(event);
+    let newTaskInput = this.element.querySelector('#newtask') as HTMLInputElement;
+    this.list = this.list.concat([newTaskInput.value]);
+    console.log(this.list);
   }
 
   render() {
