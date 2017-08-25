@@ -12,6 +12,9 @@ export class TodoList {
   private addNewTask(event: UIEvent): void {
     console.log(event);
     let newTaskInput = this.element.querySelector('#newtask') as HTMLInputElement;
+    if (!newTaskInput.value) {
+      return;
+    }
     this.list = this.list.concat([newTaskInput.value]);
     newTaskInput.value = '';
   }
